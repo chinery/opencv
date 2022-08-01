@@ -137,7 +137,7 @@ public:
 
     @sa detail::MatchesInfo
     */
-    CV_WRAP_AS(apply2) void operator ()(const std::vector<ImageFeatures> &features, CV_OUT std::vector<MatchesInfo> &pairwise_matches,
+    CV_WRAP_AS(apply2) virtual void operator ()(const std::vector<ImageFeatures> &features, CV_OUT std::vector<MatchesInfo> &pairwise_matches,
                      const cv::UMat &mask = cv::UMat());
 
     /** @return True, if it's possible to use the same matcher instance in parallel, false otherwise
@@ -203,7 +203,7 @@ public:
                             int num_matches_thresh1 = 6, int num_matches_thresh2 = 6);
 
     CV_WRAP_AS(apply2) void operator ()(const std::vector<ImageFeatures> &features, CV_OUT std::vector<MatchesInfo> &pairwise_matches,
-                                        const cv::UMat &mask = cv::UMat());
+                                        const cv::UMat &mask = cv::UMat()) CV_OVERRIDE;
 
 
 protected:
