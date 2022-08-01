@@ -202,8 +202,8 @@ public:
     CV_WRAP BestOf2NearestRangeMatcher(int range_width = 5, bool try_use_gpu = false, float match_conf = 0.3f,
                             int num_matches_thresh1 = 6, int num_matches_thresh2 = 6);
 
-    void operator ()(const std::vector<ImageFeatures> &features, std::vector<MatchesInfo> &pairwise_matches,
-                     const cv::UMat &mask = cv::UMat());
+    CV_WRAP_AS(apply2) void operator ()(const std::vector<ImageFeatures> &features, CV_OUT std::vector<MatchesInfo> &pairwise_matches,
+                                        const cv::UMat &mask = cv::UMat());
 
 
 protected:
